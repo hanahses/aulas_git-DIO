@@ -190,7 +190,7 @@ for nome in texto:
     nome.upper()
     if nome in comp:
         v_char = nome.upper()
-        print(v_char)
+        #print(v_char)
 else:
     nome = "Vazio"    
     
@@ -210,22 +210,92 @@ for num in range(7,71,7):
 #BREAK 
 #utilizado para forcar a parada do laco de repeticao
 
-while True:
-    whl = int(input("Insira um valor: "))
-    if whl == 0:
-        break
+#while True:
+   # whl = int(input("Insira um valor: "))
+    #if whl == 0:
+        #break
 
 
+#listas/vetores
+
+vet = list("hanah")
+
+#for letra in vet:
+    #print(letra)
+
+vet.pop() #trata a lista como uma pilha e retira o ultimo elemento adicionado
+#vet.pop(0) #especificando qual elemento a ser retirado
+vet1 = vet.copy() #faz uma copia da lista criada que permite alterar a copia sem alterar a fonte
+vet.count("a") #procura quantas vezes o parametro se repete
+vet.extend("ses") #adiciona o parametro no final da lista
+vet.index("h") #mostra qual a primeira ocorrencia do parametro
+vet.remove("n") #remove da lista o parametro passado, caso existam dois parametros iguais, ele remove o que aparece primeiro
+vet.reverse() #escreve a lista ao contrario
+vet.sort() #organiza a lista em ordem alfabetica
+vet.sort(reverse=True) #depois de organizar a lista em ordem alfabetica, ele vai inverter a ordem da lista
+ #vet.sort(key=lambda x: len(x)) #organiza a lista em tamanho dos elementos da lista
+ #vet.sort(key=lambda x: len(x), reverse=True) #organiza a lista em tamanho dos elementos da lista, e inverte a ordem para ficar decrescente
+ #sorted(vet) faz as mesmas coisas do sort, só que agora em forma de funcao
+len(vet) #determina o tamanho da lista
+
+#print(vet)
+
+#dicionario
+
+dados = {"nome":"Hanah","idade":"20"} #nome do dicionário = {"variavel_1": "valor_da_variavel_1", "variavel_2": "valor_da_variavel_2"}
+dados["nome"] #vai printar: Hanah
+dados["idade"] #vai printar: 20
+
+#para atualizar valores individualmente
+dados["Nome"] = "Maria"
+dados["idade"] = "20"
+
+contatos = {
+    "guilherme@gmail.com": {"nome": "Guilherme", "telefone": "3333-2221"},
+    "giovanna@gmail.com": {"nome": "Giovanna", "telefone": "3443-2121"},
+    "chappie@gmail.com": {"nome": "Chappie", "telefone": "3344-9871"},
+    "melaine@gmail.com": {"nome": "Melaine", "telefone": "3333-7766"},
+}
+
+telefone = contatos["giovanna@gmail.com"]["telefone"]  # "3443-2121"
+
+#for chave, valor in contatos.items():
+    #print(chave, valor)
+
+#contatos.clear() #limpa todos os valores do dicionario
+copia_contatos = contatos.copy() #gera uma copia do dicionario
+resultado = dict.fromkeys(["nome", "telefone"])  # {"nome": None, "telefone": None} #cria sem atribuir valor
+
+resultado = dict.fromkeys(["nome", "telefone"], "vazio")  # {"nome": "vazio", "telefone": "vazio"} #adicionou o valor "vazio"
+resultado = contatos.get("guilherme@gmail.com", {})  # {"guilherme@gmail.com": {"nome": "Guilherme", "telefone": "3333-2221"} #busca os atributos da chave
+resultado = contatos.items() #vai retornar uma lista de tuplas - primeiro termo vai ser a lista, segundo vai ser a tupla com as chaves e os atributos dela
+resultado = contatos.keys() #retorna as chaves do dicionario
+resultado = contatos.values() #retorna apenas os valores
+resultado = contatos.pop("melaine@gmail.com", "não encontrado") #remove a chave, e mostra qual valor foi removido, caso o valor n tenha sido encontrado, ele retorna a mensagem setada
+contatos.popitem() #remove o ultimo item, dá erro caso não seja encontrado nenhum valor
+contatos.setdefault("idade", 28) #adiciona ao dicionario caso o valor nao exista
+contatos.update({"giovanna@gmail.com": {"nome": "Giovanna", "telefone": "3322-8181"}}) #caso exista ele atualiza, caso nao exista ele adiciona os valores ao dicionario
+resultado = "guilherme@gmail.com" in contatos #verifica se a chave está no dicionario e retorna True ou False
+resultado = "telefone" in contatos["giovanna@gmail.com"] #verifica se o valor esta nessa chave especifica do dicionario
+del contatos["guilherme@gmail.com"]["telefone"] #deleta o valor dessa chave
+del contatos["giovanna@gmail.com"] #deleta essa chave no dicionario
 
 
+#FUNCOES
+def ola ():
+    print("Olá mundo")
+
+#def - define uma função
+#ola - nome da função
+# () - onde ficam os parametros (nesse caso não há nenhum)
+
+def ola_nome(nome):
+    print(f"Olá {nome}!")
+
+#name = "Usuário"
+#ola_nome(name)
 
 
-
-
-
-
-
-
-
+    
 
 
