@@ -295,7 +295,71 @@ def ola_nome(nome):
 #name = "Usuário"
 #ola_nome(name)
 
-
+#def salvar_carro(marca, modelo, ano, placa):
+    # salva carro no banco de dados...
+    #print(f"Carro inserido com sucesso! {marca}/{modelo}/{ano}/{placa}")
     
+#salvar_carro("Fiat", "Palio", 1999, "ABC-1234") #passa os valores dos argumentos diretamente
+#salvar_carro(marca="Fiat", modelo="Palio", ano=1999, placa="ABC-1234") #pega as variaveis e atribui os valores
+#salvar_carro(**{"marca": "Fiat", "modelo": "Palio", "ano": 1999, "placa": "ABC-1234"}) #atribui os valores como dicionario
+
+def exibir_poema(data_extenso, *args, **kwargs):
+    #*args recebe o parametro como tuplas
+    #**kwargs recebe o parametro como dicionario
+    texto = "\n".join(args) #concatena os valores saltando uma linha entre eles
+    meta_dados = "\n".join([f"{chave.title()}: {valor}" for chave, valor in kwargs.items()])  
+    mensagem = f"{data_extenso}\n\n{texto}\n\n{meta_dados}"
+    print(mensagem)
+
+    exibir_poema(
+    "Sexta, 26 de agosto",
+    "Zen of Python",
+    "Beautiful is better than ugly.",
+    "Explicit is better than implicit.",
+    "Simple is better than complex.",
+    "Complex is better than complicated.",
+    "Flat is better than nested.",
+    "Sparse is better than dense.",
+    "Readability counts.",
+    "Special cases aren't special enough to break the rules.",
+    "Although practicality beats purity.",
+    "Errors should never pass silently.",
+    "Unless explicitly silenced.",
+    "In the face of ambiguity, refuse the temptation to guess.",
+    "There should be one-- and preferably only one --obvious way to do it.",
+    "Although that way may not be obvious at first unless you're Dutch.",
+    "Now is better than never.",
+    "Although never is often better than *right* now.",
+    "If the implementation is hard to explain, it's a bad idea.",
+    "If the implementation is easy to explain, it may be a good idea.",
+    "Namespaces are one honking great idea -- let's do more of those!",
+    autor="Tim Peters",
+    ano=1999,
+) #Primeira linha: identifica como o argumento data por extenso
+  #Segunda linha até a antepenultima: recebe os argumentos como tuplas
+  #penultima linha e ultima: recebe o argumento como dicionario
+
+#chamando funções dentro de outras funções 
+def somar(a, b):
+    return a + b
+
+#def exibir_resultado(a, b, funcao):
+    #resultado = funcao(a, b)
+    #print(f"O resultado da operação {a} + {b} = {resultado}")
 
 
+#exibir_resultado(10, 10, somar)  # O resultado da operação 10 + 10 = 20
+
+
+#entendendo escopo global e local
+
+#salario = 2000 #está definida como variável global
+
+
+#def salario_bonus(bonus):
+    #global salario
+    #salario += bonus #realiza a operação salário global + bonus (inserido no parametro)
+    #return salario #retorna o valor de salario
+
+
+#salario_bonus(500)  # 2500 #500 = valor do bonus a ser somado
